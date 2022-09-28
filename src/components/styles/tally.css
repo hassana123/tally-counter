@@ -67,7 +67,7 @@ header p{
     border-radius: 15px;
     padding: 10px 25px;
  } 
- sect .form-control #error{
+ .sect .form-control #error{
     color: red;
     display: none;
     font-size: 12px;

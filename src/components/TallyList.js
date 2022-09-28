@@ -64,9 +64,15 @@ const TallyList = ({ tally, setDisplay }) => {
       setNewTallyList("");
     } else {
       document.getElementById("error").style.display = "block";
+      dissappear();
     }
   };
-
+  const dissappear = () => {
+    setTimeout(
+      () => (document.getElementById("error").style.display = "none"),
+      2000
+    );
+  };
   return (
     <div className="container">
       {home ? (

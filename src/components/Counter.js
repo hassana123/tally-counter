@@ -39,7 +39,7 @@ const Counter = () => {
                   onClick={() => setActiveLed(false)}
                   className="led-btn"
                 ></button>
-                <small>LED</small>
+                <small className="small">LED</small>
               </div>
             ) : (
               <div>
@@ -47,13 +47,13 @@ const Counter = () => {
                   onClick={() => setActiveLed(true)}
                   className="circle"
                 ></button>
-                <small>LED</small>
+                <small className="small">LED</small>
               </div>
             )}
 
             <div>
               <button onClick={popUp} className="circle"></button>
-              <small>reset</small>
+              <small className="small">reset</small>
             </div>
           </div>
           <div>
