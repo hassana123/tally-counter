@@ -32,8 +32,13 @@ const Counter = () => {
           <div className="display">
             <p>{tally}</p>
           </div>
-          <div>
-            <button onClick={popUp} className="reset"></button>
+          <div className="reset-n-led">
+            <div>
+              <button className="led"></button>
+            </div>
+            <div>
+              <button onClick={popUp} className="circle"></button>
+            </div>
           </div>
           <div>
             <button onClick={countIncrement} className="count"></button>
