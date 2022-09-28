@@ -1,0 +1,94 @@
+.container{
+    
+    color: #f0b400;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    
+}
+header{
+    background-color: #002343;
+    padding: 20px;
+    padding-bottom: 40px;
+    display: grid;
+    margin-bottom: 70px;
+    grid-gap: 120px;
+    grid-template-columns: 2fr 1fr;
+}
+header h1{
+    margin-top: 40px;
+}
+header span{
+    color: snow;
+}
+
+header p {
+
+    color: snow;
+}
+#home{
+    display: block;
+}
+#arrow{
+    display: none;
+}
+header p{
+    color: snow;
+}
+.sect{
+    padding: 20px;
+    background-color: snow;
+}
+.sect .form-control{
+    background-color: #fbb117;
+    position: absolute;
+    top: 26%;
+    width: 100%;
+    max-width: 400px;
+    left: 0;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 10px;
+ }
+ .sect .form-control input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: snow;  
+ }
+ .sect .form-control input::placeholder{
+    color: snow;
+    font-size: 15px;
+ }
+ .sect .form-control .btn-add{
+    background-color: snow;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+ } 
+ sect .form-control #error{
+    color: red;
+    display: none;
+    font-size: 12px;
+ }
+ .tally-wrapper{
+    margin-top: 50px;
+ }
+ .tally-container{
+    background-color: #002343;
+    padding: 25px;
+    color: snow;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 2fr 1fr;
+    border-radius: 15px;
+ }
+ .tally-container h3{
+    font-size:16px;
+ }
+ .target{
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #fbb117;
+ }
