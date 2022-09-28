@@ -4,7 +4,7 @@ import "./styles/counter.css";
 
 const Counter = () => {
   const [tally, setTally] = useState(0);
-
+  const [activeLed, setActiveLed] = useState(false);
   const countIncrement = (e) => {
     e.preventDefault();
     setTally((prev) => prev + 1);
@@ -29,15 +29,31 @@ const Counter = () => {
     <div className="counter-container">
       <section className="counter">
         <div className="counter-display">
-          <div className="display">
+          <div className={`${activeLed ? "led" : "display"}`}>
             <p>{tally}</p>
           </div>
           <div className="reset-n-led">
-            <div>
-              <button className="led"></button>
-            </div>
+            {activeLed ? (
+              <div>
+                <button
+                  onClick={() => setActiveLed(false)}
+                  className="led-btn"
+                ></button>
+                <small>LED</small>
+              </div>
+            ) : (
+              <div>
+                <button
+                  onClick={() => setActiveLed(true)}
+                  className="circle"
+                ></button>
+                <small>LED</small>
+              </div>
+            )}
+
             <div>
               <button onClick={popUp} className="circle"></button>
+              <small>reset</small>
             </div>
           </div>
           <div>
