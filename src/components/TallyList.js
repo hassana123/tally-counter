@@ -3,7 +3,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong, faHome } from "@fortawesome/free-solid-svg-icons";
 import "./styles/tally.css";
 import Counter from "./Counter";
-const TallyList = () => {
+function Tally({
+  tally,
+  newTallyList,
+  tallyList,
+  setDhikr,
+  setHome,
+  setNewTallyList,
+  setTallyList,
+}) {
+  const setDisplay = () => {
+    setDhikr(tally.dua);
+    setHome(false);
+  };
+
+  //   const deleteTally = (newId) => {
+  //     let tallyLeft = tallyList.filter((tally) => tally.id !== newId);
+  //     setTallyList(tallyLeft);
+  //   };
+
+  return (
+    <div className="tally-wrapper">
+      <div
+        onClick={(e) => {
+          setDisplay();
+        }}
+        className="tally-container"
+      >
+        <h3>{tally.dua}</h3>
+        <small className="target">
+          {tally.target}
+          <small>X</small>
+        </small>
+      </div>
+    </div>
+  );
+}
+
+const TallyList = ({ tally, setDisplay }) => {
   const [tallyList, setTallyList] = useState([
     { id: 1, dua: "Alhamdulillah", target: 345 },
     { id: 2, dua: "SubhanAllah", target: 345 },
@@ -12,19 +49,9 @@ const TallyList = () => {
     { id: 5, dua: "Allahu Akbar", target: 345 },
   ]);
   const [home, setHome] = useState(true);
-  //   const [dhikr, setDhikr] = useState();
+  const [dhikr, setDhikr] = useState();
   const [newTallyList, setNewTallyList] = useState("");
 
-  const setDisplay = () => {
-    setHome(false);
-    document.getElementById("home").style.display = "none";
-    document.getElementById("arrow").style.display = "block";
-  };
-  const undoDisplay = () => {
-    setHome(true);
-    document.getElementById("arrow").style.display = "none";
-    document.getElementById("home").style.display = "block";
-  };
   const addTally = () => {
     if (newTallyList) {
       let newId = tallyList.length + 1;
@@ -40,28 +67,38 @@ const TallyList = () => {
     }
   };
 
-  //   const deleteTally = (newId) => {
-  //     let tallyLeft = tallyList.filter((tally) => tally.id !== newId);
-  //     setTallyList(tallyLeft);
-  //   };
-
   return (
     <div className="container">
-      <header>
-        <div className="name">
-          <h1>MyDhikr</h1>
-          <p>have you dhikr today?</p>
+      {home ? (
+        <div className="header">
+          <header>
+            <div className="name">
+              <h1>MyDhikr</h1>
+              <p>Have you Dhikr Today?</p>
+            </div>
+            <div className="menu">
+              <span id="home" onClick={() => setHome(false)}>
+                <FontAwesomeIcon icon={faHome} />
+              </span>
+            </div>
+          </header>
         </div>
+      ) : (
+        <div className="header">
+          <header>
+            <div className="name">
+              <h1>MyDhikr</h1>
+            </div>
+            <div className="menu">
+              <span id="arrow" onClick={() => setHome(true)}>
+                <FontAwesomeIcon icon={faArrowRightLong} />
+              </span>
+            </div>
+          </header>
+          <h2>{dhikr}</h2>
+        </div>
+      )}
 
-        <div className="menu">
-          <span id="home" onClick={setDisplay}>
-            <FontAwesomeIcon icon={faHome} />
-          </span>
-          <span id="arrow" onClick={undoDisplay}>
-            <FontAwesomeIcon icon={faArrowRightLong} />
-          </span>
-        </div>
-      </header>
       {home ? (
         <section className="sect" id="tallyParent">
           <div className="form-control">
@@ -77,28 +114,23 @@ const TallyList = () => {
             <small id="error">Dhikr cannot be empty.</small>
           </div>
           {tallyList.map((tally) => (
-            <React.Fragment key={tally.id}>
-              <div className="tally-wrapper">
-                <div
-                  onClick={(e) => {
-                    setDisplay();
-                  }}
-                  className="tally-container"
-                >
-                  <h3>{tally.dua}</h3>
-                  <small className="target">
-                    {tally.target}
-                    <small>X</small>
-                  </small>
-                </div>
-              </div>
-
+            <Tally
+              setHome={setHome}
+              key={tally.id}
+              setTallyList={setNewTallyList}
+              newTallyList={newTallyList}
+              setNewTallyList={setNewTallyList}
+              tallyList={TallyList}
+              setDhikr={setDhikr}
+              setDisplay={setDisplay}
+              tally={tally}
+            >
               {/* <div className="icon">
               <span className="trash" onClick={() => deleteTally(tally.id)}>
                 <FontAwesomeIcon icon={faTrashCan} />
               </span>
             </div> */}
-            </React.Fragment>
+            </Tally>
           ))}
         </section>
       ) : (
@@ -107,5 +139,4 @@ const TallyList = () => {
     </div>
   );
 };
-
 export default TallyList;

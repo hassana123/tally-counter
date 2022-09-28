@@ -40,19 +40,21 @@ const Counter = () => {
           </div>
         </div>
       </section>
-      <section id="popUp" className="warning">
-        <p>
-          Are You Sure you want to reset?
-          <br />
-          Saved count will be lost
-        </p>
-        <button onClick={undo} className="cancel">
-          cancel
-        </button>
-        <button onClick={resetCount} className="confirm-reset">
-          Reset
-        </button>
-      </section>
+      <div id="popUp" className="warning-container">
+        <section className="warning">
+          <p>
+            Are You Sure you want to reset?
+            <br />
+            Saved count will be lost
+          </p>
+          <button onClick={undo} className="cancel">
+            cancel
+          </button>
+          <button onClick={resetCount} className="confirm-reset">
+            Reset
+          </button>
+        </section>
+      </div>
     </div>
   );
 };
