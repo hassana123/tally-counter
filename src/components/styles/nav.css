@@ -2,7 +2,6 @@
     z-index: 1;
     background: rgba(2, 66, 92, 0.486);
     backdrop-filter: saturate(180%) blur(10px);
-    height: max-content;
     width: 50%;
     Max-width:500px;
     padding:50px 10px;
@@ -25,7 +24,7 @@
 }
 .hideNav{
    
-    margin-left: -350px;
+    margin-left: -300px;
     position: absolute;
 }
 .hamburger {
