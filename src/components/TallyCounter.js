@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong, faHome } from "@fortawesome/free-solid-svg-icons";
 import "./styles/tally.css";
-import useCustomHook from "./useCustomHook";
+//import useCustomHook from "./useCustomHook";
 import Counter from "./Counter";
 function Tally({
   tally,
@@ -51,7 +51,7 @@ const TallyCounter = ({ tally, setDisplay }) => {
   ]);
   const [home, setHome] = useState(true);
   const [dhikr, setDhikr] = useState();
-  const [newTallyList, setNewTallyList] = useCustomHook();
+  const [newTallyList, setNewTallyList] = useState("");
 
   const addTally = () => {
     if (newTallyList) {
