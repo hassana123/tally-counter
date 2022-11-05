@@ -9,6 +9,14 @@ const Counter = () => {
     e.preventDefault();
     setTally((prev) => prev + 1);
   };
+  const countDecrement = (e) => {
+    e.preventDefault();
+    if (tally > 0) {
+      setTally((prev) => prev - 1);
+    } else {
+      setTally(0);
+    }
+  };
   const resetCount = (e) => {
     e.preventDefault();
     setTally(0);
@@ -56,8 +64,18 @@ const Counter = () => {
               <small className="small">reset</small>
             </div>
           </div>
-          <div>
-            <button onClick={countIncrement} className="count"></button>
+          <div className="grid">
+            <div>
+              <button onClick={countIncrement} className="count">
+                +
+              </button>
+            </div>
+            <div>
+              <button onClick={countDecrement} className="count">
+                -
+              </button>
+            </div>
+            {setTally}
           </div>
         </div>
       </section>

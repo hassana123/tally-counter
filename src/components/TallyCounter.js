@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong, faHome } from "@fortawesome/free-solid-svg-icons";
 import "./styles/tally.css";
+import useCustomHook from "./useCustomHook";
 import Counter from "./Counter";
 function Tally({
   tally,
@@ -40,7 +41,7 @@ function Tally({
   );
 }
 
-const TallyList = ({ tally, setDisplay }) => {
+const TallyCounter = ({ tally, setDisplay }) => {
   const [tallyList, setTallyList] = useState([
     { id: 1, dua: "Alhamdulillah", target: 345 },
     { id: 2, dua: "SubhanAllah", target: 345 },
@@ -50,7 +51,7 @@ const TallyList = ({ tally, setDisplay }) => {
   ]);
   const [home, setHome] = useState(true);
   const [dhikr, setDhikr] = useState();
-  const [newTallyList, setNewTallyList] = useState("");
+  const [newTallyList, setNewTallyList] = useCustomHook();
 
   const addTally = () => {
     if (newTallyList) {
@@ -126,7 +127,7 @@ const TallyList = ({ tally, setDisplay }) => {
               setTallyList={setNewTallyList}
               newTallyList={newTallyList}
               setNewTallyList={setNewTallyList}
-              tallyList={TallyList}
+              tallyCounter={TallyCounter}
               setDhikr={setDhikr}
               setDisplay={setDisplay}
               tally={tally}
@@ -145,4 +146,4 @@ const TallyList = ({ tally, setDisplay }) => {
     </div>
   );
 };
-export default TallyList;
+export default TallyCounter;

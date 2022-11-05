@@ -1,0 +1,16 @@
+.about{
+    background-color: #002343;
+    color: #f0b400;
+    width: 800%;
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+    margin-top: 30px;
+}
+.about  p{
+    color: snow;
+}
+p ul li{
+    list-style: none;
+}

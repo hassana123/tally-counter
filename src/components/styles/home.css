@@ -1,0 +1,30 @@
+
+.home section{
+    background-color: #002343;
+    width: 50%;
+    max-width: 500px;
+    margin: auto;
+    color: #f0b400;
+    text-align: center;
+    padding: 200px 0px;
+    animation-name: color;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@keyframes color {
+    0%{
+        background-color: #002343;
+        color: #f0b400;
+    }
+         50% {
+             background-color: #002343;
+             color: #f0b400;
+         }
+    100%{
+        background-color: #f0b400;
+        color: #002343;
+    }
+}
