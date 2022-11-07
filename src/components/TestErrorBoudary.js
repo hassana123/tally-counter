@@ -22,7 +22,8 @@ const TestErrorBoudary = () => {
       >
         TestErrorBoudary
       </button>
-      {error ? <div>{femaleUsers}</div> : "hey"}
+      {error ? <div>{femaleUsers}</div> : <div>
+      </div>}
     </div>
   );
 };

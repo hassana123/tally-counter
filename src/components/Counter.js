@@ -5,6 +5,8 @@ import "./styles/counter.css";
 const Counter = () => {
   const [tally, setTally] = useState(0);
   const [activeLed, setActiveLed] = useState(false);
+
+
   const countIncrement = (e) => {
     e.preventDefault();
     setTally((prev) => prev + 1);
@@ -75,7 +77,7 @@ const Counter = () => {
                 -
               </button>
             </div>
-            {setTally}
+
           </div>
         </div>
       </section>

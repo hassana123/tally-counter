@@ -49,9 +49,10 @@ const TallyCounter = ({ tally, setDisplay }) => {
     { id: 4, dua: "Astagfiru llaha", target: 345 },
     { id: 5, dua: "Allahu Akbar", target: 345 },
   ]);
-  const [home, setHome] = useState(true);
-  const [dhikr, setDhikr] = useState();
+  const [home, setHome] = useCustomHook(true);
+  const [dhikr, setDhikr] = useCustomHook();
   const [newTallyList, setNewTallyList] = useCustomHook();
+  const [target, setTarget]=useCustomHook();
 
   const addTally = () => {
     if (newTallyList) {
@@ -80,8 +81,19 @@ const TallyCounter = ({ tally, setDisplay }) => {
         <div className="header">
           <header>
             <div className="name">
-              <h1>MyDhikr</h1>
-              <p>Have you Dhikr Today?</p>
+            <div>
+            <h1>MyDhikr</h1>
+            <p>Have you Dhikr Today?</p>
+            </div>
+              <div  className="set-count">
+              <label>Set Target </label>
+              <input
+                value={target}
+                onChange={(e) => setTarget(e.target.value)}
+                type="text"
+                placeholder="365"
+              />
+              </div>
             </div>
             <div className="menu">
               <span id="home" onClick={() => setHome(false)}>
@@ -95,6 +107,7 @@ const TallyCounter = ({ tally, setDisplay }) => {
           <header>
             <div className="name">
               <h1>MyDhikr</h1>
+              <p>{target}</p>
             </div>
             <div className="menu">
               <span id="arrow" onClick={() => setHome(true)}>
