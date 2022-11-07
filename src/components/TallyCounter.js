@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong, faHome } from "@fortawesome/free-solid-svg-icons";
 import "./styles/tally.css";
-//import useCustomHook from "./useCustomHook";
+import useCustomHook from "./useCustomHook";
 import Counter from "./Counter";
 function Tally({
   tally,
@@ -49,17 +49,12 @@ const TallyCounter = ({ tally, setDisplay }) => {
     { id: 4, dua: "Astagfiru llaha", target: 345 },
     { id: 5, dua: "Allahu Akbar", target: 345 },
   ]);
-<<<<<<< HEAD
+
+  
   const [home, setHome] = useCustomHook(true);
   const [dhikr, setDhikr] = useCustomHook();
   const [newTallyList, setNewTallyList] = useCustomHook();
   const [target, setTarget]=useCustomHook();
-=======
-  const [home, setHome] = useState(true);
-  const [dhikr, setDhikr] = useState();
-  const [newTallyList, setNewTallyList] = useState("");
->>>>>>> 7d944f93c5173a1e02ae4ee33abce97f3c502630
-
   const addTally = () => {
     if (newTallyList) {
       let newId = tallyList.length + 1;

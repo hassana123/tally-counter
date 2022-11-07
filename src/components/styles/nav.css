@@ -23,13 +23,13 @@
    display: block;
 }
 .hideNav{
-   
+
     margin-left: -300px;
     position: absolute;
 }
 .hamburger {
     display: block;
-    
+
         background-color: #002343;
     border: 2px solid snow;
     padding: 3px;
