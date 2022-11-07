@@ -1,13 +1,12 @@
 .menuNav{
     z-index: 1;
-    position: relative;
     background: rgba(2, 66, 92, 0.486);
     backdrop-filter: saturate(180%) blur(10px);
-    height: max-content;
     width: 50%;
+    Max-width:500px;
     padding:50px 10px;
     position: absolute;
-    margin-left: 340px;
+    margin:auto;
     transition-duration: 3s;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: snow;
@@ -25,7 +24,7 @@
 }
 .hideNav{
    
-    margin-left: -350px;
+    margin-left: -300px;
     position: absolute;
 }
 .hamburger {
